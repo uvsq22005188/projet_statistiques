@@ -68,9 +68,11 @@ Cliquer sur le Bouton qui change de façon aléatoire la couleur de la ligne de 
 ![nb de points](https://user-images.githubusercontent.com/71555245/162651998-8b73e219-fc3c-48b7-a6e2-667f9f7586ef.gif)
 
 ### Fenêtre erreur
+![image](https://user-images.githubusercontent.com/71555245/162650039-b463770d-d602-4017-9cae-1824e8a1ee71.png)
+
 Des fenêtre erreur vont apparaitre lorsque:
 - Vous essayez de choisir un nombre de points superieur au nombre de points du fichier .csv
 - Vous essayez d'acceder à la fenêtre option ou statistiques avant d'avoir choisi un fichier csv
 - Vous essayer de choisir un nombre de points alors que le fichier csv n'est pas choisi.
-![image](https://user-images.githubusercontent.com/71555245/162650039-b463770d-d602-4017-9cae-1824e8a1ee71.png)
+
 
