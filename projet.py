@@ -1,3 +1,13 @@
+############################
+# Groupe : MI TD03
+# Kaan Doyurur
+# Younous Soussi
+# Haled Issouf
+# Tri Nghiem
+# https://github.com/uvsq22005188/projet_statistiques
+############################
+# Import des librairies
+
 import random
 import webbrowser
 import pandas
@@ -6,19 +16,21 @@ from tkinter import Menu, LabelFrame, DoubleVar, Scale
 from tkinter.filedialog import askopenfilename, asksaveasfilename
 from tkinter.messagebox import showinfo, showerror
 
-
-# from tkinter import *
+############################
+# Constantes
 
 LARGEUR = 550
 HAUTEUR = 550
 LISTE_COLORS = ["black", "red", "green", "blue", "cyan", "yellow"]
+
+############################
+# Variables
 
 rayon = 1
 n = 100
 c_ligne = "red"
 c_figure = "blue"
 mode = "OFF"
-coords_x, coords_y = "", ""
 csv_choisi = False
 cercle = True
 carre = False
@@ -33,9 +45,9 @@ canvas = tk.Canvas(root, width=LARGEUR, height=HAUTEUR,
                    bg="white", borderwidth=0, highlightthickness=0)
 canvas.grid(column=0, row=4, columnspan=3, padx=50, pady=5)
 
-
 ############################
 # Fonctions
+
 
 def cree_fichier_alea(nb, nomficher):
     """Crée un fichier avec le nom de fichier donné en argument
@@ -63,7 +75,7 @@ def lit_fichier(nomfic):
     f.close()
 
 
-def trace_nuage(nomf):
+def trace_nuage():
     """Trace les figures sur le canvas aux coordonnées de X et Y."""
 
     global n
@@ -108,6 +120,7 @@ def variance(serie):
 
     var_list = []
     for i in range(len(serie)):
+        # comprehension de liste ?
         var_list.append(((serie[i] - moyenne(serie))**2) / len(serie))
 
     return sum(var_list)
@@ -119,7 +132,7 @@ def covariance(serieX, serieY):
     cov_list = []
     for i in range(len(serieX)):
         cov_list.append(((serieX[i] - moyenne(serieX))
-                        * (serieY[i] - moyenne(serieY))) / len(serieX))
+                        * (serieY[i] - moyenne(serieY))) / len(serieX))  # comprehension de liste ?
 
     return sum(cov_list)
 
@@ -159,7 +172,7 @@ def trace_droite(a, b):
     canvas.delete("line")
 
     x0 = 0
-    y0 = HAUTEUR - b
+    y0 = HAUTEUR - b  # ne pas oublier d'inverser l'axe y
     x1 = LARGEUR
     if a == 1:
         canvas.create_line(x0, y0, x1, -b, fill=c_ligne, width=3, tags="line")
@@ -194,6 +207,7 @@ def couleur():
 
     c_ligne = random.choice(LISTE_COLORS)
     if c_ligne == "black":
+        # change la couleur du texte pour voir sur un fond noir
         b_couleur.configure(bg=c_ligne, fg="white")
     else:
         b_couleur.configure(bg=c_ligne, fg="black")
@@ -227,14 +241,11 @@ def dessin(event):
     """Lorsque le mode "Dessin" est activé cette fonction ajoute
     une figure aux coordonnées du clique souris sur le canvas."""
 
-    global coords_x, coords_y, n, listeX, listeY
+    global n, listeX, listeY
 
     if des:
-        coords_x = (float(event.x))
-        coords_y = (float(HAUTEUR - event.y))
-
-        x = coords_x
-        y = coords_y
+        x = (float(event.x))
+        y = (float(HAUTEUR - event.y))
 
         listeX.append(x)
         listeY.append(y)
@@ -261,6 +272,7 @@ def dessin(event):
 
         l_nb_points.configure(text="Nombre de points: {}".format(
             n), font=("product_sans", 12))
+
         update_label()
         update_stats()
 
@@ -275,11 +287,12 @@ def options():
     else:
 
         if "fenetre_options" in globals():
-            fenetre_options.focus_force()
+            fenetre_options.focus_force()  # Pour eviter d'ouvrir plusieurs fois la même fenêtre
             return
         fenetre_options = tk.Toplevel(root)
         fenetre_options.title("Options")
         fenetre_options.resizable(False, False)
+        # Lorsque l'on quitte la fenêtre, la variable est supprimé de globals()
         fenetre_options.wm_protocol("WM_DELETE_WINDOW", del_fen_options)
         b_valider_option = tk.Button(
             fenetre_options, text="Appliquer", command=valider_option)
@@ -490,6 +503,8 @@ def aide():
 
     webbrowser.open(
         "https://github.com/uvsq22005188/projet_statistiques/blob/main/README.md")
+    # ouvre une fenêtre sur le navigateur par defaut.
+    # (Source: https://stackoverflow.com/questions/31715119/how-can-i-open-a-website-in-my-web-browser-using-python)
 
 
 def villes_virgules():
@@ -522,9 +537,9 @@ def csv(csv_name):
 
         df = pandas.read_csv("villes_virgule.csv")
         nb_hab = df.loc[(df["nb_hab_2010"] <= 500) & (
-            df["nb_hab_2012"] <= 500), ["nb_hab_2010", "nb_hab_2012"]]
+            df["nb_hab_2012"] <= 500), ["nb_hab_2010", "nb_hab_2012"]]  # garde seulement les villes avec moins de 500 habitants
         nb_2010, nb_2012 = nb_hab["nb_hab_2010"].tolist(
-        ), nb_hab["nb_hab_2012"].tolist()
+        ), nb_hab["nb_hab_2012"].tolist()  # crée 2 liste avec les valeurs du dataset.
         f = open("villes_virgules_cleaned.txt", "w")
         if int(n) > len(nb_2010):
             showerror(
@@ -534,15 +549,15 @@ def csv(csv_name):
         else:
             for i in range(int(n)):
                 f.write(str(nb_2010[i]) + " " + str(nb_2012[i]) + "\n")
-            f.close()
+        f.close()
 
         filename = "villes_virgules_cleaned.txt"
 
     if csv_name == "housing_california.csv":
         csv_choisi = True
         df = pandas.read_csv("housing_california.csv")
-        med = df["median_income"].tolist()
-        val = df["median_house_value"].tolist()
+        med, val = df["median_income"].tolist(
+        ), df["median_house_value"].tolist()
         f = open("housing_california_cleaned.txt", "w")
         if int(n) > len(med):
             showerror(
@@ -552,7 +567,7 @@ def csv(csv_name):
         else:
             for i in range(int(n)):
                 f.write(str(med[i]*100) + " " + str(val[i]/1000) + "\n")
-            f.close()
+        f.close()
 
         filename = "housing_california_cleaned.txt"
 
