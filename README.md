@@ -1,4 +1,39 @@
 
+# Project Statistiques L1-MI-TD03 G7
+
+https://github.com/uvsq22005188/projet_statistiques
+
+
+## Authors
+
+- [@Kaan Doyurur](https://www.github.com/uvsq22005188)
+- [@Haled Issouf](https://www.github.com/)
+- [@Tri Nghiem](https://www.github.com/)
+- [@Younous Soussi](https://www.github.com/)
+
+
+## Liens vers les Datasets
+
+ - [villes_virgule.csv](https://moodle.uvsq.fr/moodle2022/mod/resource/view.php?id=55489)
+ - [housing_california.csv](https://www.kaggle.com/datasets/camnugent/california-housing-prices)
+ 
+
+## Features
+
+- Choix fichiers .csv
+- Sauvegarder/Charger
+- Graphique configurable (taille, couleur ligne, couleur figure, type de figure)
+- Fenêtre statistiques
+- Mode dessin (ON/OFF)
+- Coordonnées de la souris au dessus du Canvas
+- Ligne couleur aléatoire
+- Choix nombre de points
+- Fenêtre erreur
+
+
+
+
+
 ## Utilisation du programme
 
 ### Choisir fichier csv
@@ -70,9 +105,9 @@ Cliquer sur le Bouton qui change de façon aléatoire la couleur de la ligne de 
 ### Fenêtre erreur
 ![image](https://user-images.githubusercontent.com/71555245/162650039-b463770d-d602-4017-9cae-1824e8a1ee71.png)
 
+
 Des fenêtre erreur vont apparaitre lorsque:
 - Vous essayez de choisir un nombre de points superieur au nombre de points du fichier .csv
 - Vous essayez d'acceder à la fenêtre option ou statistiques avant d'avoir choisi un fichier csv
 - Vous essayer de choisir un nombre de points alors que le fichier csv n'est pas choisi.
-
 
