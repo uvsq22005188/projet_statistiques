@@ -20,7 +20,7 @@ https://github.com/uvsq22005188/projet_statistiques
 
 ## Features
 
-- Choix fichiers .csv
+- Laver fichier CSV
 - Sauvegarder/Charger
 - Configurations aléatoire
 - Reinitialiser
@@ -34,7 +34,7 @@ https://github.com/uvsq22005188/projet_statistiques
 
 ## Utilisation du programme
 
-### Choisir fichier csv
+### Laver fichier CSV
 Pour "laver" un CSV il suffit de cliquer sur le nom et le programme va créer une configuration dans le dossier CONFIGURATIONS que vous pouvez ensuite charger.
 
 ![image](https://user-images.githubusercontent.com/71555245/162650340-b73834b8-64ea-4d38-890f-21768d671a85.png)
