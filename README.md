@@ -23,7 +23,7 @@ https://github.com/uvsq22005188/projet_statistiques
 - Laver fichier CSV
 - Sauvegarder/Charger
 - Configurations aléatoire
-- Reinitialiser
+- Réinitialiser
 - Graphique configurable (taille, couleur ligne, couleur figure, type de figure)
 - Fenêtre statistiques
 - Mode dessin (ON/OFF)
