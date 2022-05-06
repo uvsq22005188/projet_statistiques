@@ -8,7 +8,7 @@ https://github.com/uvsq22005188/projet_statistiques
 
 - [@Kaan Doyurur](https://www.github.com/uvsq22005188)
 - [@Haled Issouf](https://www.github.com/)
-- [@Tri Nghiem](https://www.github.com/)
+- [@Tri Nghiem](https://github.com/Treee07)
 - [@Younous Soussi](https://www.github.com/)
 
 
