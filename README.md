@@ -4,7 +4,7 @@
 https://github.com/uvsq22005188/projet_statistiques
 
 
-## Authors
+## Contributeurs
 
 - [@Kaan Doyurur](https://www.github.com/uvsq22005188)
 - [@Haled Issouf](https://www.github.com/)
@@ -22,22 +22,20 @@ https://github.com/uvsq22005188/projet_statistiques
 
 - Choix fichiers .csv
 - Sauvegarder/Charger
+- Configurations aléatoire
+- Reinitialiser
 - Graphique configurable (taille, couleur ligne, couleur figure, type de figure)
 - Fenêtre statistiques
 - Mode dessin (ON/OFF)
-- Coordonnées de la souris au dessus du Canvas
 - Ligne couleur aléatoire
 - Choix nombre de points
-- Fenêtre erreur
-
-
 
 
 
 ## Utilisation du programme
 
 ### Choisir fichier csv
-Pour choisir le fichier csv il suffit de cliquer sur le nom et les points s'afficheront sur le canvas.
+Pour "laver" un CSV il suffit de cliquer sur le nom et le programme va créer une configuration dans le dossier CONFIGURATIONS que vous pouvez ensuite charger.
 
 ![image](https://user-images.githubusercontent.com/71555245/162650340-b73834b8-64ea-4d38-890f-21768d671a85.png)
 
@@ -51,6 +49,17 @@ Vous pouvez donner un nom au fichier que vous voulez sauvegarder dans la fenêtr
 
 
 ![image](https://user-images.githubusercontent.com/71555245/162653485-e716897f-a538-40bc-b48f-39a1afc63a58.png)
+
+### Configuration aléatoire
+Pour génerer une configuration aléatoire:
+#### Fichier ----> Configuration aléatoire
+
+
+### Reinitialiser
+
+Pour supprimer tout les points et recommencer à zéro:
+#### Fichier ----> Reinitialiser
+
 
 ### Fenêtre options
 Pour accéder aux options:
@@ -85,11 +94,6 @@ Lorsque vous cliquez "Activer mode dessin" vous verrez mode dessin: ON au dessus
 
 Lorsque vous cliquez "Désactiver mode dessin" vous verrez mode dessin: OFF au dessus du canvas, vous ne pouvez plus alors ajouter des points sur le canvas.
 
-### Coordonnées de la souris au dessus du Canvas
-Affiche les coordonnées (x, y) de la souris sur le canvas.
-
-![pos souris](https://user-images.githubusercontent.com/71555245/162652542-0d656e3d-754b-4ac9-8708-493a8598b85e.gif)
-
 ### Ligne couleur aléatoire
 #### Pour changer la couleur de la ligne: 
 Cliquer sur le Bouton qui change de façon aléatoire la couleur de la ligne de régression lorsque l'on clique dessus.
@@ -102,12 +106,4 @@ Cliquer sur le Bouton qui change de façon aléatoire la couleur de la ligne de 
 
 ![nb de points](https://user-images.githubusercontent.com/71555245/162651998-8b73e219-fc3c-48b7-a6e2-667f9f7586ef.gif)
 
-### Fenêtre erreur
-![image](https://user-images.githubusercontent.com/71555245/162650039-b463770d-d602-4017-9cae-1824e8a1ee71.png)
-
-
-Des fenêtre erreur vont apparaitre lorsque:
-- Vous essayez de choisir un nombre de points superieur au nombre de points du fichier .csv
-- Vous essayez d'acceder à la fenêtre option ou statistiques avant d'avoir choisi un fichier csv
-- Vous essayer de choisir un nombre de points alors que le fichier csv n'est pas choisi.
 

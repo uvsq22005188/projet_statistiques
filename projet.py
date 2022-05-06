@@ -94,12 +94,17 @@ def trace_nuage(nom):
             canvas.create_rectangle(x - rayon, HAUTEUR - y - rayon, x +
                                     rayon, HAUTEUR - y + rayon, fill=c_figure,
                                     width=0)
-    if -0.8 < forteCorrelation(listeX, listeY) < 0.8:
-        l_correlation.configure(
-            text=f"Forte correlation : False", fg="red")
+
+    if len(listeX) > 0:
+        if -0.8 < forteCorrelation(listeX, listeY) < 0.8:
+            l_correlation.configure(
+                text=f"Forte correlation : False", fg="red")
+        else:
+            l_correlation.configure(
+                text=f"Forte correlation : True", fg="green")
     else:
         l_correlation.configure(
-            text=f"Forte correlation : True", fg="green")
+            text=f"Forte correlation : __", fg="black")
 
     return len(listeX)
 
@@ -233,8 +238,9 @@ def reset():
 
     with open(temp, "w") as f:
         f.write("")
-    n = trace_nuage(temp)
+    n = 0
     l_nb_points.configure(text=f"Nombre de points: {n}")
+    trace_nuage(temp)
 
 
 def quitter():
@@ -284,6 +290,19 @@ def dessin(event):
 
         l_nb_points.configure(text=f"Nombre de points: {n}")
 
+        listeX, listeY = lit_fichier(temp)
+
+        if n > 1:
+            if -0.8 < forteCorrelation(listeX, listeY) < 0.8:
+                l_correlation.configure(
+                    text=f"Forte correlation : False", fg="red")
+            else:
+                l_correlation.configure(
+                    text=f"Forte correlation : True", fg="green")
+        else:
+            l_correlation.configure(
+                text=f"Forte correlation : __", fg="black")
+
 
 ############################
 # Fonctions BOUTONS
@@ -313,11 +332,14 @@ def valider():
 
     n = int(e_nb_de_points.get())
 
-    listeX, listeY = lit_fichier(loaded_name)
-    copy_tmp(listeX, listeY)
-    trace_nuage(temp)
+    if loaded_name == "":
+        showerror("Erreur", "Vous devez charger une configuration")
+    else:
+        listeX, listeY = lit_fichier(loaded_name)
+        copy_tmp(listeX, listeY)
+        trace_nuage(temp)
 
-    l_nb_points.configure(text=f"Nombre de points: {n}")
+        l_nb_points.configure(text=f"Nombre de points: {n}")
 
 
 ############################
