@@ -28,6 +28,8 @@ LISTE_COLORS = ["red", "green", "blue", "cyan", "yellow"]
 ############################
 # Variables globales
 
+
+loaded_name = ""
 temp = "tmp"
 
 c_figure = "blue"
@@ -336,10 +338,13 @@ def valider():
         showerror("Erreur", "Vous devez charger une configuration")
     else:
         listeX, listeY = lit_fichier(loaded_name)
-        copy_tmp(listeX, listeY)
-        trace_nuage(temp)
+        if n > len(listeX):
+            showerror("Erreur", "Le nombre de points est trop grand")
+        else:
+            copy_tmp(listeX, listeY)
+            trace_nuage(temp)
 
-        l_nb_points.configure(text=f"Nombre de points: {n}")
+            l_nb_points.configure(text=f"Nombre de points: {n}")
 
 
 ############################
@@ -628,7 +633,7 @@ def fenetre_aleatoire():
         return
     else:
         fenetre_alea = tk.Toplevel(root)
-        fenetre_alea.title("Statistiques")
+        fenetre_alea.title("Nombre de Points")
         fenetre_alea.geometry("400x60")
         fenetre_alea.wm_protocol("WM_DELETE_WINDOW", del_fen_alea)
 
@@ -706,7 +711,7 @@ menu1.add_separator()
 menu1.add_command(label="Configuration Aléatoire",
                   command=fenetre_aleatoire)
 menu1.add_separator()
-menu1.add_command(label="Reinitialiser", command=reset)
+menu1.add_command(label="Réinitialiser", command=reset)
 menu1.add_separator()
 menu1.add_command(label="Quitter", command=quitter)
 

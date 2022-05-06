@@ -54,11 +54,15 @@ Vous pouvez donner un nom au fichier que vous voulez sauvegarder dans la fenêtr
 Pour génerer une configuration aléatoire:
 #### Fichier ----> Configuration aléatoire
 
+Vous devez indiquer le nombre de points souhaité dans la nouvelle fenêtre qui apparaît.
 
-### Reinitialiser
+![image](https://user-images.githubusercontent.com/71555245/167167335-0c19f2cc-e330-4bd6-a770-8856673a86e4.png)
+
+
+### Réinitialiser
 
 Pour supprimer tout les points et recommencer à zéro:
-#### Fichier ----> Reinitialiser
+#### Fichier ----> Réinitialiser
 
 
 ### Fenêtre options
