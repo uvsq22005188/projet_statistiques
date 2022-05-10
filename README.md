@@ -9,7 +9,7 @@ https://github.com/uvsq22005188/projet_statistiques
 - [@Kaan Doyurur](https://www.github.com/uvsq22005188)
 - [@Haled Issouf](https://www.github.com/)
 - [@Tri Nghiem](https://github.com/Treee07)
-- [@Younous Soussi](https://www.github.com/)
+- [@Younous Soussi](https://github.com/ysoussi08)
 
 
 ## Liens vers les Datasets
@@ -103,11 +103,3 @@ Lorsque vous cliquez "Désactiver mode dessin" vous verrez mode dessin: OFF au d
 Cliquer sur le Bouton qui change de façon aléatoire la couleur de la ligne de régression lorsque l'on clique dessus.
 
 ![Autre couleur](https://user-images.githubusercontent.com/71555245/162651775-9a724860-4421-4337-8672-736168c1717c.gif)
-
-### Choix nombre de points
-#### Pour changer le nombre de points qui sont affichés:
-écrire le nombre de points souhaité dans la case en bas à droite, et cliquer sur le bouton "Valider".
-
-![nb de points](https://user-images.githubusercontent.com/71555245/162651998-8b73e219-fc3c-48b7-a6e2-667f9f7586ef.gif)
-
-
